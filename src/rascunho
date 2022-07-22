@@ -1,0 +1,7 @@
+objeto que quero:
+
+card = {
+    virado: true ou false
+    pergunta: "pergunta em string"
+    resposta: "resposta em string"
+}
