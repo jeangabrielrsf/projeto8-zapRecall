@@ -1,38 +1,52 @@
 import React from "react";
+import "./css/styles.css"
+import FlashCard from "./FlashCard";
+
 
 export default function Deck () {
     let cardsArray = [
-        {   question: "pergunta1" ,
-            answer: "resposta1",
+        {   title: "Pergunta 1",
+            question: "O que é JSX?" ,
+            answer: "Uma extensão de linguagem do JavaScript",
             tapped: false, 
             answered: false
         },
 
-        {   question: "pergunta2" ,
-            answer: "resposta2",
+        {   title: "Pergunta 2",
+            question: "O React é __" ,
+            answer: "uma biblioteca JavaScript para construção de interfaces",
             tapped: false, 
             answered: false
         },
 
-        {   question: "pergunta3" ,
-            answer: "resposta3",
+        {   title: "Pergunta 3",
+            question: "Componentes devem iniciar com __" ,
+            answer: "letra maiúscula",
             tapped: false, 
             answered: false
         },
-        {   question: "pergunta4" ,
-            answer: "resposta4",
+        {   title: "Pergunta 4",
+            question: "Podemos colocar __ dentro do JSX" ,
+            answer: "expressões",
             tapped: false, 
             answered: false
         }
     ];
-    const [cards, setCards] = React.useState (cardsArray);
+
+    const [cards, setCards] = React.useState ([...cardsArray]);
+    
+    
+   
 
     return (
-        <div className="container-questions">
-            <ul>
-                {cards.map(card => <li className="questions" onClick={() => openQuestion()}>{card.question} <ion-icon name="play-outline"></ion-icon></li>)}
+            <ul className="container-questions">
+                {
+                    cards.map((card, index) => <li key={index} >
+                                                <FlashCard  card={card} 
+                                                />
+                                            </li>)
+                    
+                }
             </ul>
-        </div>
     );
-
 }

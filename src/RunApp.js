@@ -1,5 +1,5 @@
 import Deck from "./Deck";
-import Top from "./Top";
+import Top from "./Top/Top";
 
 export default function RunApp () {
     return (

@@ -1,14 +1,16 @@
 import React from "react";
-import WelcomeScreen from "./WelcomeScreen";
+import WelcomeScreen from "./WelcomeScreen/WelcomeScreen";
 import RunApp from "./RunApp";
-import Bottom from "./Bottom";
+import Bottom from "./Bottom/Bottom";
+import "./css/styles.css"
+
 
 export default function App () {
     const [screen, setScreen] = React.useState(true);
 
     return (
         <>
-            {/* {screen? (
+            {screen? (
                 <div>
                     <WelcomeScreen />
                     <div className="welcome-button" onClick={() => setScreen(!screen)}>
@@ -18,10 +20,11 @@ export default function App () {
             )  : (
                 <div>
                     <RunApp />
+                    <Bottom />
                 </div>
-            )} */}
-        <RunApp />
-        <Bottom />
+            )}
+        {/* <RunApp />
+        <Bottom /> */}
         </>
     );
 }
