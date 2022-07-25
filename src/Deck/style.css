@@ -1,0 +1,6 @@
+.container-questions {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 10px auto;
+    margin-bottom: 80px;
+}

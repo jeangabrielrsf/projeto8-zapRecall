@@ -1,8 +1,19 @@
 import React from "react";
-import "./css/styles.css"
-import flipImg from "./img/flip.svg"
+import "./style.css"
+import flipImg from "../img/flip.svg"
+// import RunApp from "./RunApp";
+// import App from "./App";
 
-export default function FlashCard ({card}) {
+export default function FlashCard ({card, 
+                                    contador, 
+                                    setContador,
+                                    iconBottom, 
+                                    setIconBottom,
+                                    resultAll,
+                                    setResultAll,
+                                    wrongAnswer,
+                                    setWrongAnswer
+                                }) {
 
     const [titleClass, setTitleClass] = React.useState("titles");
     const [questionsClass, setQuestionsClass] = React.useState("hidden");
@@ -28,26 +39,37 @@ export default function FlashCard ({card}) {
 
     function chooseOption (option) {
         console.log("respondi");
-
+        console.log(resultAll);
+        console.log(typeof resultAll);
+        console.log(wrongAnswer);
         if (!card.answered) {
             setAnswersClass("hidden");
             setTitleClass("titles")
             if (option ==="red"){
                 setTitleStyle("riscado red");
-                setIcon("close-circle-outline");
+                setIcon("close-circle");
+                setContador(contador + 1);
+                setIconBottom([...iconBottom, "close-circle"]);
+                setWrongAnswer(true);
                 
             }
             if (option === "orange"){
                 setTitleStyle("riscado orange");
-                setIcon("help-circle-outline");
+                setIcon("help-circle");
+                setContador(contador + 1);
+                setContador(contador + 1);
+                setIconBottom([...iconBottom, "help-circle"]);
             }
             if (option === "green") {
                 setTitleStyle("riscado green");
-                setIcon("checkmark-circle-outline");
-
+                setIcon("checkmark-circle");
+                setContador(contador + 1);
+                setContador(contador + 1);
+                setIconBottom([...iconBottom, "checkmark-circle"]);
             }
             card.answered = true;
         }
+        console.log(contador);
     }
 
     return (
