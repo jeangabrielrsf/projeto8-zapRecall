@@ -67,11 +67,24 @@ body {
     color: #FF3030;
 }
 
+
 .orange {
     color: #FF922E;
 }
 
 .green {
+    color: #2FBE34;
+}
+
+ion-icon[name="close-circle-outline"] {
+    color: #FF3030;
+}
+
+ion-icon[name="help-circle-outline"] {
+    color: #FF922E;
+}
+
+ion-icon[name="checkmark-circle-outline"] {
     color: #2FBE34;
 }
 
@@ -137,6 +150,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .options .orangeOption{
@@ -147,6 +161,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .options .greenOption{
@@ -157,6 +172,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 

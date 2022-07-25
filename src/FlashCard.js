@@ -8,6 +8,7 @@ export default function FlashCard ({card}) {
     const [questionsClass, setQuestionsClass] = React.useState("hidden");
     const [answersClass, setAnswersClass] = React.useState("hidden")
     const [titleStyle, setTitleStyle] = React.useState("");
+    const [icon, setIcon] = React.useState("play-outline");
 
 
     function openQuestion () {
@@ -32,14 +33,17 @@ export default function FlashCard ({card}) {
             setAnswersClass("hidden");
             setTitleClass("titles")
             if (option ==="red"){
-                setTitleStyle("riscado red")
+                setTitleStyle("riscado red");
+                setIcon("close-circle-outline");
                 
             }
             if (option === "orange"){
-                setTitleStyle("riscado orange")
+                setTitleStyle("riscado orange");
+                setIcon("help-circle-outline");
             }
             if (option === "green") {
-                setTitleStyle("riscado green")
+                setTitleStyle("riscado green");
+                setIcon("checkmark-circle-outline");
 
             }
             card.answered = true;
@@ -50,7 +54,7 @@ export default function FlashCard ({card}) {
         <>
             <div className={titleClass} onClick={openQuestion}>
                 <p className={titleStyle}>{card.title}</p>
-                <ion-icon name="play-outline"></ion-icon>
+                <ion-icon name={icon}></ion-icon>
             </div>
 
             <div className={questionsClass} onClick={openAnswer}>
